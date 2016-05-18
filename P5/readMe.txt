@@ -28,7 +28,7 @@ few images, respectively.
 			-> "filter.html"
 			-> "showRecommendation.html"
 			-> "index2.html"
-			-> "results.html"
+			-> "resultsTry.html"
 			-> [css]	-> "component2.css"
 					-> "demo.css"
 					-> "giftrecommender.css"
@@ -47,7 +47,7 @@ few images, respectively.
 					-> "login.js"
 					-> "modernizr-2.6.2.min.js"
 					-> "polyfills.js"
-					-> "results.js"
+					-> "resultsTry.js"
 					-> "signup.js"
 					-> "welcome.js"
 
