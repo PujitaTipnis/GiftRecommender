@@ -1,0 +1,146 @@
+<!--    filter.html:  HTML to select gift recommendation criteria
+    	INST630 Group Project
+    	Team: Karishma Ghiya - kghiya93@umd.edu
+        	  Anushka Kher   - akher@umd.edu
+          	  Pujita Tipnis  - ptipnis@umd.edu
+-->
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+	<script type= "text/javascript" src = "js/countries.js"></script>
+	<title>Gift Recommender</title>
+	<link href="css/jquery-ui1.css" rel="stylesheet">
+</head>
+<body>
+
+<h2 class="demoHeaders"></h2>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script>
+	//This function sets the slider range for budget
+	$(function() {
+	    $( "#slider-range" ).slider({
+	      range: true,
+	      min: 0,
+	      max: 1000,
+	      values: [ 75, 300 ],
+	      slide: function( event, ui ) {
+	        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+	      }
+	    });
+	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	});
+
+// this function sets the slider range for age
+	$(function() {
+    	$( "#slider-range1" ).slider({
+      	range: true,
+      	min: 0,
+      	max: 100,
+      	values: [ 5, 15 ],
+      	slide: function( event, ui ) {
+        	$( "#amount1" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+      	}
+    	});
+    	$( "#amount1" ).val($( "#slider-range1" ).slider( "values", 0 ) +
+      	" - " + $( "#slider-range1" ).slider( "values", 1 ) );
+	});
+</script>
+
+	<div id="heading">
+		<h2 align="center">Gift Recommender</h2>
+	</div>
+
+	<div id="title">
+		<p align="center">Want a gift recommendation?</p>
+	</div>
+
+	<div id="filters">
+		<fieldset id="filter">
+		<center>
+			<br><br><font color="red">*</font>
+			<label for="gender">Gender of recipient : </label>
+			<input type="radio" name="gender" value="female" id="radioF" unchecked></input>
+			<label for="radioF"><img src="images/female.png" id="femaleImg" alt="Female"/>&nbsp &nbsp</label>
+			<input type="radio" name="gender" value="male" id="radioM" unchecked></input>
+			<label for="radioM"><img src="images/male.png" id="maleImg" alt="Male"/></label> <br> <br> <br> <br>Age of recepient : 
+			<div id="slider-range1"></div>
+			<p>
+				<font color="red">*</font>
+				<label for="amount1">Age range:</label>
+				<input type="text" id="amount1" readonly style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			<br> <br> 
+			Select Country : <select id="country" name ="country"></select> <br> <br>
+			Select State : <select id="state" name ="state"></select> <br> <br>
+
+			 <script language="javascript">
+				populateCountries("country", "state");
+			 </script>
+
+			 <br> <br>
+			Your Budget : 
+			<div id="slider-range"></div>
+			<p>
+				<label for="amount">Price range:</label>
+				<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			
+			<br> <br>
+
+			Estimated delivery date:  				
+			<input type="date" id="deliveryDate"/>
+			<br> <br> <br>
+
+			<font color="red">*</font>
+			Occasion : 
+			<select id="occ">
+				<option disabled selected value> -- select an option -- </option>
+			 	<option value="Birthday">Birthday</option>
+				<option value="Wedding">Wedding</option>
+				<option value="Anniversary">Anniversary</option>
+				<option value="valentine's Day">Valentine's Day</option>
+				<option value="Baby shower">Baby Shower</option>
+				<option value="congragulations">Congragulatory</option>
+				<option value="Graduation">Graduation</option>
+				<option value="Mother's Day">Mother's Day</option>
+			 	<option value="Father's Day">Father's Day</option>
+				<option value="Sibling's Day">Sibling's Day</option>
+				<option value="Thank You">Thank You</option>
+				<option value="get well soon">Get Well Soon</option>
+				<option value="christmas">Christmas</option>
+				<option value="diwali">Diwali</option>
+			</select> <br> <br> <br> <br>
+
+			Relationship : 
+			<select id="relation">
+				<option disabled selected value> -- select an option -- </option>
+				<option value="mother">Mother</option>
+				<option value="father">Father</option>
+				<option value="spouse">Spouse</option>
+				<option value="grandfather">Grandfather</option>
+				<option value="grandmother">Grandmother</option>
+				<option value="brother">Brother</option>
+				<option value="sister">Sister</option>
+				<option value="son">Son</option>
+				<option value="daughter">Daughter</option>
+				<option value="aunt">Aunt</option>
+				<option value="uncle">Uncle</option>
+				<option value="grandchild">Grandchild</option>
+				<option value="cousin">Cousin</option>
+				<option value="friend">Friend</option>
+			</select> <br> <br> <br> <br>
+
+			<center><input type="button" id="submit" value="SUBMIT"/></center>
+		</center>
+		</fieldset>
+
+	</div>
+
+<script src="js/filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--  results.html : HTML to display results to users based on their search criterion
+    INST630 Group Project - P3
+    Date: 05/01/2016
+    Team: Karishma Ghiya - kghiya93@umd.edu
+          Anushka Kher   - akher@umd.edu
+          Pujita Tipnis  - ptipnis@umd.edu
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Results</title>
+		<link rel="stylesheet" type="text/css" href="css/resultscss.css">
+    <link rel="stylesheet" type="text/css" href="css/giftrecommender.css">
+		<meta charset="UTF-8" />
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  		<script src="js/resultsTry.js" ></script>
+	</head>
+	<body>
+		<div id="heading">
+			<h2 align="center">Gift Recommender</h2>
+		</div>
+		<div id="title">
+			<p align="center">Results</p>
+		</div>
+
+    <ul class="tab">
+  <li><a href="#" class="tablinks" onclick="openSite(event, 'Macys')">Macys</a></li>
+  <li><a href="#" class="tablinks" onclick="openSite(event, 'Thinkgeek')">Thinkgeek</a></li>
+  <li><a href="#" class="tablinks" onclick="openSite(event, 'Gifts')">Gifts.com</a></li>
+  <li><a href="#" class="tablinks" onclick="openSite(event, 'Uncommongoods')">Uncommon goods</a></li>
+    <li><a href="#" class="tablinks" onclick="openSite(event, 'amazon')">Amazon</a></li> 
+</ul>
+
+
+<div id="Macys" class="tabcontent">
+  <h3>Macys</h3>
+  <iframe name="myDemoFrame" id="myDemoFrame"  src="http://www1.macys.com//" width="1300" height="1800"></iframe>
+</div>
+
+<div id="Thinkgeek" class="tabcontent">
+  <h3>Thinkgeek</h3>
+      <iframe name="myDemoFrame1" id="myDemoFrame1" src="http://www.thinkgeek.com/" width="1300" height="1800"></iframe>
+</div>
+
+<div id="Gifts" class="tabcontent">
+  <h3>Gifts</h3>
+      <iframe name="myDemoFrame2" id="myDemoFrame2" src="http://www.gifts.com/" width="1300" height="1800"></iframe>
+</div>
+
+<div id="Uncommongoods" class="tabcontent">
+  <h3>Uncommon Goods</h3>
+      <iframe name="myDemoFrame3" id="myDemoFrame3" src="http://www.uncommongoods.com/gifts/" width="1300" height="1800"></iframe>
+</div>
+
+<div id="amazon" class="tabcontent">
+  <h3>Amazon</h3>
+</div>
+
+</body>
+</html>
